@@ -17,6 +17,13 @@ module Api
         @ticket = Ticket.find(params[:id])
         render json: { ticket: @ticket, coordinates: @ticket.converted_digsite_info }
       end
+
+      def destroy
+        @ticket = Ticket.find(params[:id])
+        @ticket.destroy!
+
+        render json: {}, status: :ok
+      end
     end
   end
 end
