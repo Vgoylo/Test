@@ -28,8 +28,12 @@ class TicketBuilderService
   def excavator_attributes
     {
       company_name: params.dig(:excavator, :company_name),
-      address: params.dig(:excavator, :address),
+      address: excavator_address_attribute,
       crew_on_site: params.dig(:excavator, :crew_onsite)
     }
+  end
+
+  def excavator_address_attribute
+    params[:excavator].slice(:address, :city, :state, :zip).values.join(', ')
   end
 end
