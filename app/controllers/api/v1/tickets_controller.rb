@@ -15,7 +15,7 @@ module Api
 
       def show
         @ticket = Ticket.find(params[:id])
-        render json: { data: @ticket }
+        render json: { ticket: @ticket, coordinates: @ticket.converted_digsite_info }
       end
     end
   end

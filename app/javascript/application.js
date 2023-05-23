@@ -14,9 +14,10 @@ function getCoordinates() {
   xhr.send();
 
   xhr.onload = () => {
-    initMap(data);
+    initMap(JSON.parse(xhr.response));
   }
 };
+
 function initMap(ticket) {
   console.log(ticket);
   const { coordinates } = ticket;
