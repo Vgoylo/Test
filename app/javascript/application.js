@@ -1,7 +1,6 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
 import "controllers"
-import $ from "jquery";
 
 function getCoordinates() {
   const ticketId = window.location.pathname.split('/').slice(-1)[0];
