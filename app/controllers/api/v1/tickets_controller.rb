@@ -12,6 +12,11 @@ module Api
           render json: ticket.errors, status: :unprocessable_entity
         end
       end
+
+      def show
+        @ticket = Ticket.find(params[:id])
+        render json: { data: @ticket }
+      end
     end
   end
 end
