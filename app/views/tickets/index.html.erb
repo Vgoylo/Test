@@ -1,0 +1,71 @@
+
+<%= render 'shared/header' %>
+<div class="table table-hover">
+  <table class="table">
+    <li>Tickets</li>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ticket_id</th><br>
+        <th scope="col">request_number</th><br>
+        <th scope="col">sequence_number</th>
+        <th scope="col">request_type</th><br/>
+        <th scope="col">request_action</th>
+        <th scope="col">additional_service_area_codes</th>
+        <th scope="col">created_at</th>
+        <th scope="col">updated_at</th>
+
+      </tr>
+    </thead>
+
+    <tbody class="table table-striped">
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.id %></td>
+          <td><%= ticket.request_number %></td>
+          <td><%= ticket.request_number %></td>
+          <td><%= ticket.sequence_number %></td>
+          <td><%= ticket.request_type %></td>
+          <td><%= ticket.request_action %></td>
+          <td><%= ticket.request_action %></td>
+          <td><%= ticket.additional_service_area_codes %></td>
+          <td><%= ticket.created_at %></td>
+          <td><%= ticket.updated_at %></td>
+          <td><%= link_to 'show_maps', ticket_path(ticket.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+====================================================================================================================================================================
+
+<div class="table table-hover">
+  <table class="table">
+   <li>Excavator</li>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ticket_id</th>
+        <th scope="col">request_number</th>
+        <th scope="col">sequence_number</th>
+        <th scope="col">request_type</th><br/>
+        <th scope="col">request_action</th>
+        <th scope="col">created_at</th>
+        <th scope="col">updated_at</th>
+      </tr>
+    </thead>
+
+    <tbody class="table table-striped">
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.excavator.company_name%></td>
+          <td><%= ticket.excavator.address %></td>
+          <td><%= ticket.excavator.crew_on_site %></td>
+          <td><%= ticket.excavator.ticket_id %></td>
+          <td><%= ticket.request_action %></td>
+          <td><%= ticket.excavator.created_at %></td>
+          <td><%= ticket.excavator.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
