@@ -6,6 +6,8 @@ class TicketBuilderService
   end
 
   def call
+    validate_params
+
     Ticket.new(ticket_attributes)
   end
 
@@ -35,5 +37,11 @@ class TicketBuilderService
 
   def excavator_address_attribute
     params[:excavator].slice(:address, :city, :state, :zip).values.join(', ')
+  end
+
+  def validate_params
+    return if params[:excavator].key?(:zip) && params.dig(:excavator, :zip).present?
+
+    raise ArgumentError, 'Wrong excavator argument'
   end
 end

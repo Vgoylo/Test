@@ -11,6 +11,8 @@ module Api
         else
           render json: ticket.errors, status: :unprocessable_entity
         end
+      rescue ArgumentError, ActiveRecord::RecordInvalid => e
+        render json: { message: e.message }
       end
 
       def show
