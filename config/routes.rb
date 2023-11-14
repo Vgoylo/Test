@@ -2,11 +2,17 @@
 
 Rails.application.routes.draw do
   root to: 'tickets#index'
-  resources :tickets, only: [:index, :show]
+  resources :tickets, only: %i[index show]
 
   namespace :api do
+    resources  :exrates do
+      get 'search', on: :collection
+    end
+
     namespace :v1 do
-      resources :tickets, only: [:create, :show, :destroy]
+      resources :tickets, only: %i[index create update show destroy search] do
+        get 'search', on: :collection
+      end
     end
   end
 end
