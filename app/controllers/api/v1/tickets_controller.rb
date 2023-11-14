@@ -34,9 +34,9 @@ module Api
       end
 
       def search
-        search_query
+        @tickets = TicketsListQuery.search(params)
 
-        render json: @tickets, each_serializer: TicketSerializer
+        render json: @tickets
       end
 
       def destroy
@@ -48,10 +48,6 @@ module Api
       end
 
       private
-
-      def search_query
-        @tickets = TicketsListQuery.search
-      end
 
       def find_ticket
         @ticket = Ticket.find(params[:id])

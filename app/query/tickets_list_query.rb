@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TicketsListQuery
-  def self.search
-    Ticket.eager_load(:excavator).where("excavators.address like 'Grodno%'")
+  def self.search(params)
+    Ticket.includes(:excavator).select{ |ticket| ticket.excavator['address'].include?(params['name']) }
   end
 end

@@ -5,9 +5,6 @@ Rails.application.routes.draw do
   resources :tickets, only: %i[index show]
 
   namespace :api do
-    resources  :exrates do
-      get 'search', on: :collection
-    end
 
     namespace :v1 do
       resources :tickets, only: %i[index create update show destroy search] do
