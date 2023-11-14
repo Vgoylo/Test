@@ -1,4 +1,6 @@
-class TicketBuilderService
+# frozen_string_literal: true
+
+class TicketBuilderService < BaseService
   attr_reader :params
 
   def initialize(params)

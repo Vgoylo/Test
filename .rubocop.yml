@@ -1,0 +1,60 @@
+require:
+  - rubocop-rspec
+  - rubocop-rails
+
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: false
+Layout/LineLength:
+  Max: 200
+Rails:
+  Enabled: true
+Rails/FindEach:
+  Enabled: false
+Rails/FindBy:
+  Enabled: false
+Rails/HttpPositionalArguments:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Enabled: false
+Rails/Delegate:
+  Enabled: false
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Style/HashSyntax:
+  Enabled: false
+Rails/FilePath:
+  Enabled: false
+RSpec/DescribedClass:
+  SkipBlocks: true
+RSpec/RepeatedExampleGroupDescription:
+  Enabled: false
+RSpec/EmptyExampleGroup:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 40
+RSpec/MultipleMemoizedHelpers:
+ Max: 30
+RSpec/MultipleExpectations:
+  Max: 5
+RSpec/NestedGroups:
+  Max: 20
+Metrics/MethodLength:
+  Max: 20
+RSpec/RepeatedExampleGroupBody:
+  Enabled: false
+RSpec/FactoryBot/FactoryClassName:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/AnyInstance:
+ Enabled: false
+RSpec/InstanceVariable:
+  Enabled: false
