@@ -36,7 +36,7 @@ module Api
       def search
         @tickets = TicketsListQuery.search(params)
 
-        render json: @tickets
+        render json: @tickets, each_serializer: TicketSerializer
       end
 
       def destroy
